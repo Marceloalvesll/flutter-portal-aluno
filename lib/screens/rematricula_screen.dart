@@ -76,7 +76,10 @@ class _RematriculaScreenState extends State<RematriculaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('📘 Rematrícula Online')),
+      appBar: AppBar(
+        title: const Text('📘 Rematrícula Online'),
+        backgroundColor: Colors.indigo,
+      ),
       body: FutureBuilder<List<Disciplina>>(
         future: futureDisciplinas,
         builder: (context, snapshot) {
@@ -115,9 +118,8 @@ class _RematriculaScreenState extends State<RematriculaScreen> {
                     final selecionada = selecionadas.contains(disc.nome);
 
                     return Card(
-                      color: selecionada ? Colors.green.shade100 : null,
-                      elevation: 4,
-                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      color: selecionada ? Colors.green.shade100 : Colors.white,
+                      elevation: 3,
                       child: ListTile(
                         leading: Icon(
                           selecionada

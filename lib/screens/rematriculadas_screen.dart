@@ -28,6 +28,7 @@ class _RematriculadasScreenState extends State<RematriculadasScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('📚 Disciplinas Rematriculadas'),
+        backgroundColor: Colors.indigo,
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
@@ -61,6 +62,7 @@ class _RematriculadasScreenState extends State<RematriculadasScreen> {
               final nome = disciplinas[index];
               return Card(
                 color: Colors.blue.shade50,
+                elevation: 2,
                 child: ListTile(
                   leading: const Icon(Icons.check_circle, color: Colors.green),
                   title: Text(

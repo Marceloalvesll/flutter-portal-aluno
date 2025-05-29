@@ -26,9 +26,9 @@ class _BoletimScreenState extends State<BoletimScreen> {
   Color _corStatus(String status) {
     switch (status) {
       case 'Aprovado':
-        return Colors.green.shade100;
+        return Colors.green.shade50;
       case 'Reprovado':
-        return Colors.red.shade100;
+        return Colors.red.shade50;
       default:
         return Colors.grey.shade200;
     }
@@ -48,7 +48,7 @@ class _BoletimScreenState extends State<BoletimScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('📊 Boletim')),
+      appBar: AppBar(title: Text('📊 Boletim Acadêmico')),
       body: FutureBuilder<List<Disciplina>>(
         future: futureBoletim,
         builder: (context, snapshot) {
@@ -77,7 +77,7 @@ class _BoletimScreenState extends State<BoletimScreen> {
           }
 
           return ListView(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(16),
             children:
                 agrupadasPorPeriodo.entries.map((entry) {
                   final periodo = entry.key;
@@ -89,9 +89,9 @@ class _BoletimScreenState extends State<BoletimScreen> {
                       Text(
                         '📚 ${periodo}º Período',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.blueGrey,
+                          color: Colors.indigo,
                         ),
                       ),
                       SizedBox(height: 8),
@@ -126,7 +126,7 @@ class _BoletimScreenState extends State<BoletimScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 16),
+                      SizedBox(height: 24),
                     ],
                   );
                 }).toList(),
